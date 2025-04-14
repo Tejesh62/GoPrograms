@@ -1,8 +1,5 @@
-package main
+package permutations
 
-import (
-	"fmt"
-)
 
 func Permute(nums []int) [][]int {
 	var result [][]int
@@ -35,8 +32,8 @@ func Permute(nums []int) [][]int {
 
 }
 
-func main() {
-	fmt.Println(Permute([]int{7, 9, 15}))
-	fmt.Println(Permute([]int{0, 1}))
-	fmt.Println(Permute([]int{1}))
-}
+// func main() {
+// 	fmt.Println(Permute([]int{7, 9, 15}))
+// 	fmt.Println(Permute([]int{0, 1}))
+// 	fmt.Println(Permute([]int{1}))
+// }

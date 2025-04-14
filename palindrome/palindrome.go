@@ -1,7 +1,5 @@
-package main
-import (
-    "fmt"
-)
+package palindrome
+
 
 func LongestPalindrome(s string) string {
 
@@ -40,7 +38,7 @@ func max(a, b int) int {
         return b
 }
 
-func main() {
-    fmt.Println(LongestPalindrome("babad"))
-    fmt.Println(LongestPalindrome("cbbd"))
-}
+// func main() {
+//     fmt.Println(LongestPalindrome("babad"))
+//     fmt.Println(LongestPalindrome("cbbd"))
+// }
