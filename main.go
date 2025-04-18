@@ -10,6 +10,9 @@ import (
 	"codes/permutations"
 	"codes/subset"
 	"codes/minstack"
+	"codes/spiralorder"
+	"codes/equalparts"
+	"codes/maxgap"
 )
 
 func main() {
@@ -53,4 +56,33 @@ func main() {
 	ms.Pop()
 	fmt.Println(ms.Top())    
 	fmt.Println(ms.GetMin())
+
+	//spiralorder
+	matrix1 := [][]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+	matrix2 := [][]int{
+		{1, 2, 3, 4},
+		{5, 6, 7, 8},
+		{9, 10, 11, 12},
+	}
+	fmt.Println("Output for matrix1:", spiralorder.SpiralOrder(matrix1)) 
+	fmt.Println("Output for matrix2:", spiralorder.SpiralOrder(matrix2)) 
+
+	//equalparts
+	arr1 := []int{1, 0, 1, 0, 1}
+	fmt.Println("Input:", arr1, "Output:", equalparts.ThreeEqualParts(arr1)) 
+
+	arr2 := []int{1, 1, 0, 1, 1}
+	fmt.Println("Input:", arr2, "Output:", equalparts.ThreeEqualParts(arr2)) 
+
+	arr3 := []int{1, 1, 0, 0, 1}
+	fmt.Println("Input:", arr3, "Output:", equalparts.ThreeEqualParts(arr3)) 
+
+	//maxgap
+	fmt.Println(maxgap.MaximumGap([]int{3, 6, 9, 1})) 
+	fmt.Println(maxgap.MaximumGap([]int{10}))        
+
 }
