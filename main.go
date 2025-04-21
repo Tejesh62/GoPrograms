@@ -5,17 +5,20 @@ import (
 
 	"codes/bitmapholes"
 	"codes/combination"
+	"codes/distance"
 	"codes/equalparts"
 	"codes/lastword"
+	"codes/matrix"
 	"codes/maxgap"
 	"codes/minstack"
 	"codes/palindrome"
 	"codes/permutations"
+	"codes/search"
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/subset"
-	"codes/matrix"
-	"codes/search"
+	"codes/tree"
+	"codes/base7"
 )
 
 func main() {
@@ -123,4 +126,41 @@ func main() {
 	fmt.Println(search.Exist(board, "SEE"))    
 	fmt.Println(search.Exist(board, "ABCB"))   
 
+	//min distance
+
+		fmt.Println(distance.MinDistance("horse", "ros"))
+		fmt.Println(distance.MinDistance("intention", "execution"))
+
+	// odd even tree
+
+	root := &tree.TreeNode{
+		Val: 1,
+		Left: &tree.TreeNode{
+			Val: 10,
+			Left: &tree.TreeNode{
+				Val: 3,
+				Left:  &tree.TreeNode{Val: 12},
+				Right: &tree.TreeNode{Val: 8},
+			},
+		},
+		Right: &tree.TreeNode{
+			Val: 4,
+			Left: &tree.TreeNode{
+				Val: 7,
+				Left: &tree.TreeNode{Val: 6},
+			},
+			Right: &tree.TreeNode{
+				Val: 9,
+				Right: &tree.TreeNode{Val: 2},
+			},
+		},
+	}
+
+	fmt.Println(tree.Tree(root))
+
+	//base7
+		fmt.Println(base7.ConvertBase(100))  
+		fmt.Println(base7.ConvertBase(-7))   
+		fmt.Println(base7.ConvertBase(0))    
 }
+
