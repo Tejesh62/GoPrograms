@@ -19,6 +19,9 @@ import (
 	"codes/subset"
 	"codes/tree"
 	"codes/base7"
+	"codes/validation"
+	"codes/foursum"
+	"codes/count"
 )
 
 func main() {
@@ -162,5 +165,30 @@ func main() {
 		fmt.Println(base7.ConvertBase(100))  
 		fmt.Println(base7.ConvertBase(-7))   
 		fmt.Println(base7.ConvertBase(0))    
+
+	//UTF-8 Validate
+
+	fmt.Println(validation.Validate([]int{197, 130, 1}))
+	fmt.Println(validation.Validate([]int{235, 140, 4}))
+
+	//foursum
+	nums1 := []int{1, 0, -1, 0, -2, 2}
+	target1 := 0
+	fmt.Println("Input:", nums1)
+	fmt.Println("Target:", target1)
+	fmt.Println("Output:", foursum.FourSum(nums1, target1))
+	
+	nums2 := []int{2, 2, 2, 2, 2}
+	target2 := 8
+	fmt.Println("\nInput:", nums2)
+	fmt.Println("Target:", target2)
+	fmt.Println("Output:", foursum.FourSum(nums2, target2))
+	
+	//count and say
+
+	fmt.Println(count.CountAndSay(1)) 
+	fmt.Println(count.CountAndSay(4)) 
+	fmt.Println(count.CountAndSay(6)) 
+	
 }
 
