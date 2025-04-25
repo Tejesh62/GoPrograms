@@ -22,6 +22,9 @@ import (
 	"codes/validation"
 	"codes/foursum"
 	"codes/count"
+	"codes/integers"
+	"codes/multiply"
+	"codes/sametree"
 )
 
 func main() {
@@ -189,6 +192,34 @@ func main() {
 	fmt.Println(count.CountAndSay(1)) 
 	fmt.Println(count.CountAndSay(4)) 
 	fmt.Println(count.CountAndSay(6)) 
+
+	//divide two integers
+	fmt.Println(integers.Divide(10, 3))   
+	fmt.Println(integers.Divide(7, -3))   
+	fmt.Println(integers.Divide(-2147483648, 3)) 
+
+
+	// multiply strings
+	fmt.Println(multiply.Multiply("2", "3"))       
+	fmt.Println(multiply.Multiply("123", "456"))   
+	fmt.Println(multiply.Multiply("0", "123456"))  
+
+	//Same Tree
+
+	p := &sametree.TreeNode{Val: 1}
+	p.Left = &sametree.TreeNode{Val: 2}
+	p.Right = &sametree.TreeNode{Val: 3}
 	
+	q := &sametree.TreeNode{Val: 1}
+	q.Left = &sametree.TreeNode{Val: 2}
+	q.Right = &sametree.TreeNode{Val: 3}
+	
+	fmt.Println(sametree.SameTree(p, q)) 
+	
+	r := &sametree.TreeNode{Val: 1}
+	r.Right = &sametree.TreeNode{Val: 2}
+	
+	fmt.Println(sametree.SameTree(p, r)) 
+
 }
 
