@@ -3,28 +3,31 @@ package main
 import (
 	"fmt"
 
+	"codes/base7"
 	"codes/bitmapholes"
 	"codes/combination"
+	"codes/count"
 	"codes/distance"
 	"codes/equalparts"
+	"codes/foursum"
+	"codes/integers"
 	"codes/lastword"
 	"codes/matrix"
 	"codes/maxgap"
 	"codes/minstack"
+	"codes/multiply"
 	"codes/palindrome"
 	"codes/permutations"
+	"codes/sametree"
 	"codes/search"
+	"codes/searchmatrix"
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/subset"
+	"codes/traversal"
 	"codes/tree"
-	"codes/base7"
 	"codes/validation"
-	"codes/foursum"
-	"codes/count"
-	"codes/integers"
-	"codes/multiply"
-	"codes/sametree"
+	"codes/wordmatch"
 )
 
 func main() {
@@ -219,7 +222,38 @@ func main() {
 	r := &sametree.TreeNode{Val: 1}
 	r.Right = &sametree.TreeNode{Val: 2}
 	
-	fmt.Println(sametree.SameTree(p, r)) 
+	fmt.Println(sametree.SameTree(p, r))   
 
+	// search 2d matrix
+
+	matrix := [][]int {
+		{1, 4, 7, 11, 15},
+		{2, 5, 8, 12, 19},
+		{3, 6, 9, 16, 22},
+		{10, 13, 14, 17, 24},
+		{18, 21, 23, 26, 30},
+	}
+		fmt.Println(searchmatrix.SearchMatrix(matrix, 5))  
+		fmt.Println(searchmatrix.SearchMatrix(matrix, 20)) 
+
+	//Inorder Traversal
+
+		inorderRoot := &traversal.TreeNode{Val: 1}
+		inorderRoot.Right = &traversal.TreeNode{Val: 2}
+		inorderRoot.Right.Left = &traversal.TreeNode{Val: 3}
+
+		fmt.Println(traversal.OrderTraversal(inorderRoot))
+
+	
+	//word match
+	
+		fmt.Println(wordmatch.WordPattern("abba", "dog cat cat dog"))  
+		fmt.Println(wordmatch.WordPattern("abba", "dog cat cat fish")) 
+		fmt.Println(wordmatch.WordPattern("aaaa", "dog cat cat dog")) 
+	
 }
+	
+
+
+
 
