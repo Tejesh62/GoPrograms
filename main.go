@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 
+	"codes/addbinary"
 	"codes/base7"
 	"codes/bitmapholes"
+	"codes/colors"
 	"codes/combination"
 	"codes/count"
 	"codes/distance"
@@ -28,6 +30,7 @@ import (
 	"codes/tree"
 	"codes/validation"
 	"codes/wordmatch"
+	"codes/powertwo"
 )
 
 func main() {
@@ -131,14 +134,14 @@ func main() {
 		{'A', 'D', 'E', 'E'},
 	}
 
-	fmt.Println(search.Exist(board, "ABCCED")) 
-	fmt.Println(search.Exist(board, "SEE"))    
-	fmt.Println(search.Exist(board, "ABCB"))   
+	fmt.Println(search.Exist(board, "ABCCED"))
+	fmt.Println(search.Exist(board, "SEE"))
+	fmt.Println(search.Exist(board, "ABCB"))
 
 	//min distance
 
-		fmt.Println(distance.MinDistance("horse", "ros"))
-		fmt.Println(distance.MinDistance("intention", "execution"))
+	fmt.Println(distance.MinDistance("horse", "ros"))
+	fmt.Println(distance.MinDistance("intention", "execution"))
 
 	// odd even tree
 
@@ -147,7 +150,7 @@ func main() {
 		Left: &tree.TreeNode{
 			Val: 10,
 			Left: &tree.TreeNode{
-				Val: 3,
+				Val:   3,
 				Left:  &tree.TreeNode{Val: 12},
 				Right: &tree.TreeNode{Val: 8},
 			},
@@ -155,11 +158,11 @@ func main() {
 		Right: &tree.TreeNode{
 			Val: 4,
 			Left: &tree.TreeNode{
-				Val: 7,
+				Val:  7,
 				Left: &tree.TreeNode{Val: 6},
 			},
 			Right: &tree.TreeNode{
-				Val: 9,
+				Val:   9,
 				Right: &tree.TreeNode{Val: 2},
 			},
 		},
@@ -168,9 +171,9 @@ func main() {
 	fmt.Println(tree.Tree(root))
 
 	//base7
-		fmt.Println(base7.ConvertBase(100))  
-		fmt.Println(base7.ConvertBase(-7))   
-		fmt.Println(base7.ConvertBase(0))    
+	fmt.Println(base7.ConvertBase(100))
+	fmt.Println(base7.ConvertBase(-7))
+	fmt.Println(base7.ConvertBase(0))
 
 	//UTF-8 Validate
 
@@ -183,77 +186,86 @@ func main() {
 	fmt.Println("Input:", nums1)
 	fmt.Println("Target:", target1)
 	fmt.Println("Output:", foursum.FourSum(nums1, target1))
-	
+
 	nums2 := []int{2, 2, 2, 2, 2}
 	target2 := 8
 	fmt.Println("\nInput:", nums2)
 	fmt.Println("Target:", target2)
 	fmt.Println("Output:", foursum.FourSum(nums2, target2))
-	
+
 	//count and say
 
-	fmt.Println(count.CountAndSay(1)) 
-	fmt.Println(count.CountAndSay(4)) 
-	fmt.Println(count.CountAndSay(6)) 
+	fmt.Println(count.CountAndSay(1))
+	fmt.Println(count.CountAndSay(4))
+	fmt.Println(count.CountAndSay(6))
 
 	//divide two integers
-	fmt.Println(integers.Divide(10, 3))   
-	fmt.Println(integers.Divide(7, -3))   
-	fmt.Println(integers.Divide(-2147483648, 3)) 
-
+	fmt.Println(integers.Divide(10, 3))
+	fmt.Println(integers.Divide(7, -3))
+	fmt.Println(integers.Divide(-2147483648, 3))
 
 	// multiply strings
-	fmt.Println(multiply.Multiply("2", "3"))       
-	fmt.Println(multiply.Multiply("123", "456"))   
-	fmt.Println(multiply.Multiply("0", "123456"))  
+	fmt.Println(multiply.Multiply("2", "3"))
+	fmt.Println(multiply.Multiply("123", "456"))
+	fmt.Println(multiply.Multiply("0", "123456"))
 
 	//Same Tree
 
 	p := &sametree.TreeNode{Val: 1}
 	p.Left = &sametree.TreeNode{Val: 2}
 	p.Right = &sametree.TreeNode{Val: 3}
-	
+
 	q := &sametree.TreeNode{Val: 1}
 	q.Left = &sametree.TreeNode{Val: 2}
 	q.Right = &sametree.TreeNode{Val: 3}
-	
-	fmt.Println(sametree.SameTree(p, q)) 
-	
+
+	fmt.Println(sametree.SameTree(p, q))
+
 	r := &sametree.TreeNode{Val: 1}
 	r.Right = &sametree.TreeNode{Val: 2}
-	
-	fmt.Println(sametree.SameTree(p, r))   
+
+	fmt.Println(sametree.SameTree(p, r))
 
 	// search 2d matrix
 
-	matrix := [][]int {
+	matrix := [][]int{
 		{1, 4, 7, 11, 15},
 		{2, 5, 8, 12, 19},
 		{3, 6, 9, 16, 22},
 		{10, 13, 14, 17, 24},
 		{18, 21, 23, 26, 30},
 	}
-		fmt.Println(searchmatrix.SearchMatrix(matrix, 5))  
-		fmt.Println(searchmatrix.SearchMatrix(matrix, 20)) 
+	fmt.Println(searchmatrix.SearchMatrix(matrix, 5))
+	fmt.Println(searchmatrix.SearchMatrix(matrix, 20))
 
 	//Inorder Traversal
 
-		inorderRoot := &traversal.TreeNode{Val: 1}
-		inorderRoot.Right = &traversal.TreeNode{Val: 2}
-		inorderRoot.Right.Left = &traversal.TreeNode{Val: 3}
+	inorderRoot := &traversal.TreeNode{Val: 1}
+	inorderRoot.Right = &traversal.TreeNode{Val: 2}
+	inorderRoot.Right.Left = &traversal.TreeNode{Val: 3}
 
-		fmt.Println(traversal.OrderTraversal(inorderRoot))
+	fmt.Println(traversal.OrderTraversal(inorderRoot))
 
 	
 	//word match
-	
-		fmt.Println(wordmatch.WordPattern("abba", "dog cat cat dog"))  
-		fmt.Println(wordmatch.WordPattern("abba", "dog cat cat fish")) 
-		fmt.Println(wordmatch.WordPattern("aaaa", "dog cat cat dog")) 
-	
+
+	fmt.Println(wordmatch.WordPattern("abba", "dog cat cat dog"))
+	fmt.Println(wordmatch.WordPattern("abba", "dog cat cat fish"))
+	fmt.Println(wordmatch.WordPattern("aaaa", "dog cat cat dog"))
+
+	//add binary
+
+	fmt.Println(addbinary.AddBinary("11", "1"))
+	fmt.Println(addbinary.AddBinary("1010", "1011"))
+
+	//sort colors
+	nums := []int{2, 0, 2, 1, 1, 0}
+	colors.SortColors(nums)
+	fmt.Println(nums)
+
+	//power of two
+	fmt.Println(powertwo.PowerTwo(1))   
+	fmt.Println(powertwo.PowerTwo(16))  
+	fmt.Println(powertwo.PowerTwo(3))   
+
 }
-	
-
-
-
-
