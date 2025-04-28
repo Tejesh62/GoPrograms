@@ -31,6 +31,9 @@ import (
 	"codes/validation"
 	"codes/wordmatch"
 	"codes/powertwo"
+	"codes/graph"
+	"codes/prefix"
+	"codes/version"
 )
 
 func main() {
@@ -268,4 +271,39 @@ func main() {
 	fmt.Println(powertwo.PowerTwo(16))  
 	fmt.Println(powertwo.PowerTwo(3))   
 
+	//clone graph
+
+	
+	node1 := &graph.Node{Val: 1}
+	node2 := &graph.Node{Val: 2}
+	node1.Neighbors = []*graph.Node{node2}
+	node2.Neighbors = []*graph.Node{node1}
+	
+	cloned := graph.CloneGraph(node1)
+	
+	fmt.Println("Original Node:", node1.Val)
+	fmt.Println("Cloned Node:", cloned.Val)
+	
+		
+	fmt.Println("Original Neighbor:", node1.Neighbors[0].Val)
+	fmt.Println("Cloned Neighbor:", cloned.Neighbors[0].Val)
+
+	// Longest common prefix
+
+		strs1 := []string{"flower", "flow", "flight"}
+		fmt.Println("Common Prefix:", prefix.Prefix(strs1))
+	
+		strs2 := []string{"dog", "racecar", "car"}
+		fmt.Println("Common prefix:", prefix.Prefix(strs2))
+
+	// First Bad Version
+
+	version.BadVer = 4
+	n := 5
+	fmt.Println("First bad version for n=5, bad=4:", version.FindBadVersion(n)) 
+
+	version.BadVer = 1
+	n = 1
+	fmt.Println("First bad version for n=1, bad=1:", version.FindBadVersion(n)) 
 }
+	
