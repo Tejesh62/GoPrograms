@@ -12,6 +12,7 @@ import (
 	"codes/distance"
 	"codes/equalparts"
 	"codes/foursum"
+	"codes/graph"
 	"codes/integers"
 	"codes/lastword"
 	"codes/matrix"
@@ -20,6 +21,8 @@ import (
 	"codes/multiply"
 	"codes/palindrome"
 	"codes/permutations"
+	"codes/powertwo"
+	"codes/prefix"
 	"codes/sametree"
 	"codes/search"
 	"codes/searchmatrix"
@@ -29,11 +32,11 @@ import (
 	"codes/traversal"
 	"codes/tree"
 	"codes/validation"
-	"codes/wordmatch"
-	"codes/powertwo"
-	"codes/graph"
-	"codes/prefix"
 	"codes/version"
+	"codes/wordmatch"
+	"codes/missingnumber"
+	"codes/wordbreak"
+	"codes/symmetric"
 )
 
 func main() {
@@ -249,7 +252,6 @@ func main() {
 
 	fmt.Println(traversal.OrderTraversal(inorderRoot))
 
-	
 	//word match
 
 	fmt.Println(wordmatch.WordPattern("abba", "dog cat cat dog"))
@@ -267,43 +269,70 @@ func main() {
 	fmt.Println(nums)
 
 	//power of two
-	fmt.Println(powertwo.PowerTwo(1))   
-	fmt.Println(powertwo.PowerTwo(16))  
-	fmt.Println(powertwo.PowerTwo(3))   
+	fmt.Println(powertwo.PowerTwo(1))
+	fmt.Println(powertwo.PowerTwo(16))
+	fmt.Println(powertwo.PowerTwo(3))
 
 	//clone graph
 
-	
 	node1 := &graph.Node{Val: 1}
 	node2 := &graph.Node{Val: 2}
 	node1.Neighbors = []*graph.Node{node2}
 	node2.Neighbors = []*graph.Node{node1}
-	
+
 	cloned := graph.CloneGraph(node1)
-	
+
 	fmt.Println("Original Node:", node1.Val)
 	fmt.Println("Cloned Node:", cloned.Val)
-	
-		
+
 	fmt.Println("Original Neighbor:", node1.Neighbors[0].Val)
 	fmt.Println("Cloned Neighbor:", cloned.Neighbors[0].Val)
 
 	// Longest common prefix
 
-		strs1 := []string{"flower", "flow", "flight"}
-		fmt.Println("Common Prefix:", prefix.Prefix(strs1))
-	
-		strs2 := []string{"dog", "racecar", "car"}
-		fmt.Println("Common prefix:", prefix.Prefix(strs2))
+	strs1 := []string{"flower", "flow", "flight"}
+	fmt.Println("Common Prefix:", prefix.Prefix(strs1))
+
+	strs2 := []string{"dog", "racecar", "car"}
+	fmt.Println("Common prefix:", prefix.Prefix(strs2))
 
 	// First Bad Version
 
 	version.BadVer = 4
 	n := 5
-	fmt.Println("First bad version for n=5, bad=4:", version.FindBadVersion(n)) 
+	fmt.Println("First bad version for n=5, bad=4:", version.FindBadVersion(n))
 
 	version.BadVer = 1
 	n = 1
-	fmt.Println("First bad version for n=1, bad=1:", version.FindBadVersion(n)) 
-}
+	fmt.Println("First bad version for n=1, bad=1:", version.FindBadVersion(n))
+
+	//missing number
+
+	fmt.Println(missingnumber.MissingNumber(([]int{3, 0, 1})))
+	fmt.Println(missingnumber.MissingNumber(([]int{0, 1})))
+	fmt.Println(missingnumber.MissingNumber(([]int{9, 6, 4, 2, 3, 5, 7, 0, 1})))
+
+	//word break
+	fmt.Println(wordbreak.WordBreak("leetcode", []string{"leet","code"}))
+	fmt.Println(wordbreak.WordBreak("applepenapple", []string{"apple", "pen"}))
+	fmt.Println(wordbreak.WordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
+
+	// Symmetric
 	
+	treeRoot := &symmetric.TreeNode{
+		Val: 1,
+		Left: &symmetric.TreeNode{
+			Val: 2,
+			Left: &symmetric.TreeNode{Val: 3},
+			Right: &symmetric.TreeNode{Val: 4},
+		},
+		Right: &symmetric.TreeNode{
+			Val: 2,
+			Left: &symmetric.TreeNode{Val: 4},
+			Right: &symmetric.TreeNode{Val: 3},
+		},
+	}
+
+	fmt.Println("Is tree symmetric?", symmetric.Symmetric(treeRoot))
+
+}
