@@ -14,6 +14,7 @@ import (
 	"codes/foursum"
 	"codes/graph"
 	"codes/integers"
+	"codes/keyboard"
 	"codes/lastword"
 	"codes/matrix"
 	"codes/maxgap"
@@ -22,10 +23,13 @@ import (
 	"codes/missingnumber"
 	"codes/multiply"
 	"codes/palindrome"
+	"codes/pathsum"
 	"codes/permutations"
 	"codes/powertwo"
 	"codes/prefix"
 	"codes/primenumbers"
+	"codes/rectanglearea"
+	"codes/reversebits"
 	"codes/sametree"
 	"codes/search"
 	"codes/searchmatrix"
@@ -39,7 +43,6 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/pathsum"
 )
 
 func main() {
@@ -367,6 +370,22 @@ func main() {
 	
 		target := 22
 		fmt.Println("Has path sum:", pathsum.HasPathSum(pathroot, target)) 
+	
+
+	//Keyboard
+	fmt.Println(keyboard.MinSteps(3))
+	fmt.Println(keyboard.MinSteps(1))
+	fmt.Println(keyboard.MinSteps(9))
+	fmt.Println(keyboard.MinSteps(100))
+	
+	//ReverseBits
+		fmt.Println(reversebits.ReverseBits(43261596))       
+		fmt.Println(reversebits.ReverseBits(4294967293))    
+	
+	//rectnagle area
+
+		fmt.Println(rectanglearea.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2)) // Output: 45
+		fmt.Println(rectanglearea.ComputeArea(-2, -2, 2, 2, -2, -2, 2, 2)) // Output: 16
 	
 
 }
