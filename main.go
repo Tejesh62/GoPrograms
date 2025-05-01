@@ -18,25 +18,28 @@ import (
 	"codes/matrix"
 	"codes/maxgap"
 	"codes/minstack"
+	"codes/mismatch"
+	"codes/missingnumber"
 	"codes/multiply"
 	"codes/palindrome"
 	"codes/permutations"
 	"codes/powertwo"
 	"codes/prefix"
+	"codes/primenumbers"
 	"codes/sametree"
 	"codes/search"
 	"codes/searchmatrix"
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/subset"
+	"codes/symmetric"
 	"codes/traversal"
 	"codes/tree"
 	"codes/validation"
 	"codes/version"
-	"codes/wordmatch"
-	"codes/missingnumber"
 	"codes/wordbreak"
-	"codes/symmetric"
+	"codes/wordmatch"
+	"codes/pathsum"
 )
 
 func main() {
@@ -334,5 +337,36 @@ func main() {
 	}
 
 	fmt.Println("Is tree symmetric?", symmetric.Symmetric(treeRoot))
+
+	//primenumbers
+
+	fmt.Println(primenumbers.CountPrimes(10)) 
+	fmt.Println(primenumbers.CountPrimes(0))  
+	fmt.Println(primenumbers.CountPrimes(1))  
+
+	//mismatch
+		fmt.Println(mismatch.FindErrorNums([]int{1, 2, 2, 4})) 
+		fmt.Println(mismatch.FindErrorNums([]int{1, 1}))   
+		
+	
+	//Pathsum
+		pathroot := &pathsum.TreeNode{Val: 5,
+			Left: &pathsum.TreeNode{Val: 4,
+				Left: &pathsum.TreeNode{Val: 11,
+					Left:  &pathsum.TreeNode{Val: 7},
+					Right: &pathsum.TreeNode{Val: 2},
+				},
+			},
+			Right: &pathsum.TreeNode{Val: 8,
+				Left:  &pathsum.TreeNode{Val: 13},
+				Right: &pathsum.TreeNode{Val: 4,
+					Right: &pathsum.TreeNode{Val: 1},
+				},
+			},
+		}
+	
+		target := 22
+		fmt.Println("Has path sum:", pathsum.HasPathSum(pathroot, target)) 
+	
 
 }
