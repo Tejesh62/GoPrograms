@@ -5,6 +5,7 @@ import (
 
 	"codes/addbinary"
 	"codes/base7"
+	"codes/binarygap"
 	"codes/bitmapholes"
 	"codes/colors"
 	"codes/combination"
@@ -22,6 +23,7 @@ import (
 	"codes/mismatch"
 	"codes/missingnumber"
 	"codes/multiply"
+	"codes/occurrences"
 	"codes/palindrome"
 	"codes/pathsum"
 	"codes/permutations"
@@ -37,6 +39,7 @@ import (
 	"codes/spiralorder"
 	"codes/subset"
 	"codes/symmetric"
+	"codes/transpose"
 	"codes/traversal"
 	"codes/tree"
 	"codes/validation"
@@ -379,13 +382,38 @@ func main() {
 	fmt.Println(keyboard.MinSteps(100))
 	
 	//ReverseBits
-		fmt.Println(reversebits.ReverseBits(43261596))       
-		fmt.Println(reversebits.ReverseBits(4294967293))    
+	fmt.Println(reversebits.ReverseBits(43261596))       
+	fmt.Println(reversebits.ReverseBits(4294967293))    
 	
 	//rectnagle area
 
-		fmt.Println(rectanglearea.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2)) // Output: 45
-		fmt.Println(rectanglearea.ComputeArea(-2, -2, 2, 2, -2, -2, 2, 2)) // Output: 16
+	fmt.Println(rectanglearea.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2)) // Output: 45
+	fmt.Println(rectanglearea.ComputeArea(-2, -2, 2, 2, -2, -2, 2, 2)) // Output: 16
 	
+	// Transpose Matrix
 
+	matrix1 = [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	fmt.Println("Transpose of matrix1:", transpose.Transpose(matrix1))
+
+	matrix2 = [][]int{{1, 2, 3}, {4, 5, 6}}
+	fmt.Println("Transpose of matrix2:", transpose.Transpose(matrix2))
+
+	// Binary Gap
+
+	fmt.Println(binarygap.BinaryGap(22)) 
+	fmt.Println(binarygap.BinaryGap(8))  
+	fmt.Println(binarygap.BinaryGap(5)) 
+
+	// Occurences After Bigram
+
+	text1 := "alice is a good girl she is a good student"
+	first1 := "a"
+	second1 := "good"
+	fmt.Println(occurrences.FindOccurrences(text1, first1, second1))
+	
+	text2 := "we will we will rock you"
+	first2 := "we"
+	second2 := "will"
+	fmt.Println(occurrences.FindOccurrences(text2, first2, second2))
+	
 }
