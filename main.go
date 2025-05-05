@@ -12,6 +12,7 @@ import (
 	"codes/count"
 	"codes/distance"
 	"codes/equalparts"
+	"codes/excelsheet"
 	"codes/foursum"
 	"codes/graph"
 	"codes/integers"
@@ -46,6 +47,9 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
+	"codes/counting"
+	"codes/phone"
+
 )
 
 func main() {
@@ -415,5 +419,22 @@ func main() {
 	first2 := "we"
 	second2 := "will"
 	fmt.Println(occurrences.FindOccurrences(text2, first2, second2))
+
+	//excelsheet
+
+	fmt.Println(excelsheet.TitleNumber(("A")))
+	fmt.Println(excelsheet.TitleNumber("AB"))
+	fmt.Println(excelsheet.TitleNumber("ZY"))
+
+	// Counting Bits
+
+	fmt.Println(counting.CountBits(2)) 
+	fmt.Println(counting.CountBits(5))
+
+	// Letter Combinations of a Phone Number
+
+	fmt.Println(phone.Letter("23"))
+	fmt.Println(phone.Letter(""))
+	fmt.Println(phone.Letter("2"))
 	
 }
