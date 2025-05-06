@@ -10,6 +10,7 @@ import (
 	"codes/colors"
 	"codes/combination"
 	"codes/count"
+	"codes/counting"
 	"codes/distance"
 	"codes/equalparts"
 	"codes/excelsheet"
@@ -24,21 +25,25 @@ import (
 	"codes/mismatch"
 	"codes/missingnumber"
 	"codes/multiply"
+	"codes/nodevalue"
 	"codes/occurrences"
 	"codes/palindrome"
 	"codes/pathsum"
 	"codes/permutations"
+	"codes/phone"
 	"codes/powertwo"
 	"codes/prefix"
 	"codes/primenumbers"
 	"codes/rectanglearea"
 	"codes/reversebits"
+	"codes/reversewords"
 	"codes/sametree"
 	"codes/search"
 	"codes/searchmatrix"
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/subset"
+	"codes/summaryranges"
 	"codes/symmetric"
 	"codes/transpose"
 	"codes/traversal"
@@ -47,9 +52,6 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/counting"
-	"codes/phone"
-
 )
 
 func main() {
@@ -436,5 +438,20 @@ func main() {
 	fmt.Println(phone.Letter("23"))
 	fmt.Println(phone.Letter(""))
 	fmt.Println(phone.Letter("2"))
+
+	// Swap Nodes in Pairs
+
+	list := nodevalue.BuildList([] int{1, 2, 3, 4})
+	swapped := nodevalue.SwapPairs(list)
+	nodevalue.PrintList(swapped)
+
+	// Reverse words in a string
+	fmt.Println(reversewords.ReverseWords(" The sky is blue "))
+	fmt.Println(reversewords.ReverseWords(" Hello World "))
+	fmt.Println(reversewords.ReverseWords(" A good example "))
+
+	// Summary Ranges
+	fmt.Println(summaryranges.SummaryRanges([]int{0, 1, 2, 4, 5, 7}))
+	fmt.Println(summaryranges.SummaryRanges([]int{0, 2, 3, 4, 6, 8, 9}))
 	
 }
