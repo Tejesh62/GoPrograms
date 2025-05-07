@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"codes/addbinary"
+	"codes/balancedbinarytree"
 	"codes/base7"
 	"codes/binarygap"
 	"codes/bitmapholes"
@@ -52,6 +53,8 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
+	"codes/plusone"
+	"codes/pascaltriangle"
 )
 
 func main() {
@@ -328,22 +331,22 @@ func main() {
 	fmt.Println(missingnumber.MissingNumber(([]int{9, 6, 4, 2, 3, 5, 7, 0, 1})))
 
 	//word break
-	fmt.Println(wordbreak.WordBreak("leetcode", []string{"leet","code"}))
+	fmt.Println(wordbreak.WordBreak("leetcode", []string{"leet", "code"}))
 	fmt.Println(wordbreak.WordBreak("applepenapple", []string{"apple", "pen"}))
 	fmt.Println(wordbreak.WordBreak("catsandog", []string{"cats", "dog", "sand", "and", "cat"}))
 
 	// Symmetric
-	
+
 	treeRoot := &symmetric.TreeNode{
 		Val: 1,
 		Left: &symmetric.TreeNode{
-			Val: 2,
-			Left: &symmetric.TreeNode{Val: 3},
+			Val:   2,
+			Left:  &symmetric.TreeNode{Val: 3},
 			Right: &symmetric.TreeNode{Val: 4},
 		},
 		Right: &symmetric.TreeNode{
-			Val: 2,
-			Left: &symmetric.TreeNode{Val: 4},
+			Val:   2,
+			Left:  &symmetric.TreeNode{Val: 4},
 			Right: &symmetric.TreeNode{Val: 3},
 		},
 	}
@@ -352,50 +355,48 @@ func main() {
 
 	//primenumbers
 
-	fmt.Println(primenumbers.CountPrimes(10)) 
-	fmt.Println(primenumbers.CountPrimes(0))  
-	fmt.Println(primenumbers.CountPrimes(1))  
+	fmt.Println(primenumbers.CountPrimes(10))
+	fmt.Println(primenumbers.CountPrimes(0))
+	fmt.Println(primenumbers.CountPrimes(1))
 
 	//mismatch
-		fmt.Println(mismatch.FindErrorNums([]int{1, 2, 2, 4})) 
-		fmt.Println(mismatch.FindErrorNums([]int{1, 1}))   
-		
-	
+	fmt.Println(mismatch.FindErrorNums([]int{1, 2, 2, 4}))
+	fmt.Println(mismatch.FindErrorNums([]int{1, 1}))
+
 	//Pathsum
-		pathroot := &pathsum.TreeNode{Val: 5,
-			Left: &pathsum.TreeNode{Val: 4,
-				Left: &pathsum.TreeNode{Val: 11,
-					Left:  &pathsum.TreeNode{Val: 7},
-					Right: &pathsum.TreeNode{Val: 2},
-				},
+	pathroot := &pathsum.TreeNode{Val: 5,
+		Left: &pathsum.TreeNode{Val: 4,
+			Left: &pathsum.TreeNode{Val: 11,
+				Left:  &pathsum.TreeNode{Val: 7},
+				Right: &pathsum.TreeNode{Val: 2},
 			},
-			Right: &pathsum.TreeNode{Val: 8,
-				Left:  &pathsum.TreeNode{Val: 13},
-				Right: &pathsum.TreeNode{Val: 4,
-					Right: &pathsum.TreeNode{Val: 1},
-				},
+		},
+		Right: &pathsum.TreeNode{Val: 8,
+			Left: &pathsum.TreeNode{Val: 13},
+			Right: &pathsum.TreeNode{Val: 4,
+				Right: &pathsum.TreeNode{Val: 1},
 			},
-		}
-	
-		target := 22
-		fmt.Println("Has path sum:", pathsum.HasPathSum(pathroot, target)) 
-	
+		},
+	}
+
+	target := 22
+	fmt.Println("Has path sum:", pathsum.HasPathSum(pathroot, target))
 
 	//Keyboard
 	fmt.Println(keyboard.MinSteps(3))
 	fmt.Println(keyboard.MinSteps(1))
 	fmt.Println(keyboard.MinSteps(9))
 	fmt.Println(keyboard.MinSteps(100))
-	
+
 	//ReverseBits
-	fmt.Println(reversebits.ReverseBits(43261596))       
-	fmt.Println(reversebits.ReverseBits(4294967293))    
-	
+	fmt.Println(reversebits.ReverseBits(43261596))
+	fmt.Println(reversebits.ReverseBits(4294967293))
+
 	//rectnagle area
 
-	fmt.Println(rectanglearea.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2)) // Output: 45
+	fmt.Println(rectanglearea.ComputeArea(-3, 0, 3, 4, 0, -1, 9, 2))   // Output: 45
 	fmt.Println(rectanglearea.ComputeArea(-2, -2, 2, 2, -2, -2, 2, 2)) // Output: 16
-	
+
 	// Transpose Matrix
 
 	matrix1 = [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
@@ -406,9 +407,9 @@ func main() {
 
 	// Binary Gap
 
-	fmt.Println(binarygap.BinaryGap(22)) 
-	fmt.Println(binarygap.BinaryGap(8))  
-	fmt.Println(binarygap.BinaryGap(5)) 
+	fmt.Println(binarygap.BinaryGap(22))
+	fmt.Println(binarygap.BinaryGap(8))
+	fmt.Println(binarygap.BinaryGap(5))
 
 	// Occurences After Bigram
 
@@ -416,7 +417,7 @@ func main() {
 	first1 := "a"
 	second1 := "good"
 	fmt.Println(occurrences.FindOccurrences(text1, first1, second1))
-	
+
 	text2 := "we will we will rock you"
 	first2 := "we"
 	second2 := "will"
@@ -430,7 +431,7 @@ func main() {
 
 	// Counting Bits
 
-	fmt.Println(counting.CountBits(2)) 
+	fmt.Println(counting.CountBits(2))
 	fmt.Println(counting.CountBits(5))
 
 	// Letter Combinations of a Phone Number
@@ -441,7 +442,7 @@ func main() {
 
 	// Swap Nodes in Pairs
 
-	list := nodevalue.BuildList([] int{1, 2, 3, 4})
+	list := nodevalue.BuildList([]int{1, 2, 3, 4})
 	swapped := nodevalue.SwapPairs(list)
 	nodevalue.PrintList(swapped)
 
@@ -453,5 +454,39 @@ func main() {
 	// Summary Ranges
 	fmt.Println(summaryranges.SummaryRanges([]int{0, 1, 2, 4, 5, 7}))
 	fmt.Println(summaryranges.SummaryRanges([]int{0, 2, 3, 4, 6, 8, 9}))
-	
+
+	root1 := &balancedbinarytree.TreeNode{
+		Val:  3,
+		Left: &balancedbinarytree.TreeNode{Val: 9},
+		Right: &balancedbinarytree.TreeNode{
+			Val:   20,
+			Left:  &balancedbinarytree.TreeNode{Val: 15},
+			Right: &balancedbinarytree.TreeNode{Val: 7},
+		},
+	}
+	fmt.Println("Is tree 1 balanced? Expected: true ->", balancedbinarytree.IsBalanced(root1))
+
+	root2 := &balancedbinarytree.TreeNode{
+		Val: 1,
+		Left: &balancedbinarytree.TreeNode{
+			Val: 2,
+			Left: &balancedbinarytree.TreeNode{
+				Val:  3,
+				Left: &balancedbinarytree.TreeNode{Val: 4},
+			},
+		},
+		Right: &balancedbinarytree.TreeNode{Val: 2},
+	}
+	fmt.Println("Is tree 2 balanced? Expected: false ->", balancedbinarytree.IsBalanced(root2))
+
+	fmt.Println(plusone.Plus([]int{1, 2, 3}))
+	fmt.Println(plusone.Plus([]int{4, 3, 2, 1}))
+	fmt.Println(plusone.Plus([]int{9}))
+
+	//Pascel Triangle
+
+	fmt.Println(pascaltriangle.Generate(5)) 
+	fmt.Println(pascaltriangle.Generate(1)) 
+
+
 }
