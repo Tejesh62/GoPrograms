@@ -55,6 +55,9 @@ import (
 	"codes/wordmatch"
 	"codes/plusone"
 	"codes/pascaltriangle"
+	"codes/sqrt"
+	"codes/searchinsert"
+	"codes/simplify"
 )
 
 func main() {
@@ -464,6 +467,8 @@ func main() {
 			Right: &balancedbinarytree.TreeNode{Val: 7},
 		},
 	}
+
+	// 
 	fmt.Println("Is tree 1 balanced? Expected: true ->", balancedbinarytree.IsBalanced(root1))
 
 	root2 := &balancedbinarytree.TreeNode{
@@ -488,5 +493,26 @@ func main() {
 	fmt.Println(pascaltriangle.Generate(5)) 
 	fmt.Println(pascaltriangle.Generate(1)) 
 
+
+	// Sqrt
+
+	fmt.Println(sqrt.MySqrt(4)) 
+	fmt.Println(sqrt.MySqrt(8)) 
+	fmt.Println(sqrt.MySqrt(0)) 
+	fmt.Println(sqrt.MySqrt(1)) 
+
+	//search insert
+
+	fmt.Println(searchinsert.SearchInsert([]int{1, 3, 5, 6}, 5))
+	fmt.Println(searchinsert.SearchInsert([]int{1, 3, 5, 6}, 2))
+	fmt.Println(searchinsert.SearchInsert([]int{1, 3, 5, 6}, 7))
+
+	// simplify path
+
+	fmt.Println(simplify.SimplifyPath("/home/"))                       
+	fmt.Println(simplify.SimplifyPath("/home//foo/"))                  
+	fmt.Println(simplify.SimplifyPath("/home/user/Documents/../Pictures")) 
+	fmt.Println(simplify.SimplifyPath("/../"))                         
+	fmt.Println(simplify.SimplifyPath("/.../a/../b/c/../d/./"))       
 
 }
