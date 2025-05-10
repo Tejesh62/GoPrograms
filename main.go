@@ -58,6 +58,9 @@ import (
 	"codes/sqrt"
 	"codes/searchinsert"
 	"codes/simplify"
+	"codes/matrixzero"
+	"codes/romantoint"
+	"codes/inttoroman"
 )
 
 func main() {
@@ -513,6 +516,35 @@ func main() {
 	fmt.Println(simplify.SimplifyPath("/home//foo/"))                  
 	fmt.Println(simplify.SimplifyPath("/home/user/Documents/../Pictures")) 
 	fmt.Println(simplify.SimplifyPath("/../"))                         
-	fmt.Println(simplify.SimplifyPath("/.../a/../b/c/../d/./"))       
+	fmt.Println(simplify.SimplifyPath("/.../a/../b/c/../d/./"))  
+	
+	
+	// set matrix zero
+
+		matrix = [][]int{
+			{1, 1, 1},
+			{1, 0, 1},
+			{1, 1, 1},
+		}
+	
+		fmt.Println("Before:")
+		matrixzero.PrintMatrix(matrix)
+	
+		matrixzero.SetZeroes(matrix)
+	
+		fmt.Println("After:")
+		matrixzero.PrintMatrix(matrix)
+
+
+	// Roman to Integer
+	fmt.Println("Roman 'III' =", romantoint.RomanToInt("III"))         
+	fmt.Println("Roman 'LVIII' =", romantoint.RomanToInt("LVIII"))     
+	fmt.Println("Roman 'MCMXCIV' =", romantoint.RomanToInt("MCMXCIV")) 
+
+	// Integer to Roman
+
+	fmt.Println(inttoroman.IntToRoman(3749)) 
+	fmt.Println(inttoroman.IntToRoman(58))   
+	fmt.Println(inttoroman.IntToRoman(1994)) 	
 
 }
