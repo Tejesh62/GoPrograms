@@ -61,6 +61,9 @@ import (
 	"codes/matrixzero"
 	"codes/romantoint"
 	"codes/inttoroman"
+	"codes/validparentheses"
+	"codes/palindromenumbercheck"
+	"codes/singlenumber"
 )
 
 func main() {
@@ -547,4 +550,28 @@ func main() {
 	fmt.Println(inttoroman.IntToRoman(58))   
 	fmt.Println(inttoroman.IntToRoman(1994)) 	
 
+	// Valid Parentheses
+
+	fmt.Println(validparentheses.IsValid("()"))     
+	fmt.Println(validparentheses.IsValid("()[]{}"))
+	fmt.Println(validparentheses.IsValid("(]"))    
+	fmt.Println(validparentheses.IsValid("([])"))  
+
+
+	//Palindrome Number Check
+
+	fmt.Println(palindromenumbercheck.IsPalindrome(121))   
+	fmt.Println(palindromenumbercheck.IsPalindrome(-121))  
+	fmt.Println(palindromenumbercheck.IsPalindrome(10))    
+	fmt.Println(palindromenumbercheck.IsPalindrome(12321))
+
+	// Single Number
+
+	fmt.Println(singlenumber.SingleNumber([]int{2, 2, 1}))       
+	fmt.Println(singlenumber.SingleNumber([]int{4, 1, 2, 1, 2})) 
+	fmt.Println(singlenumber.SingleNumber([]int{1}))             
+
+
+	
 }
+
