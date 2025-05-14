@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"codes/addbinary"
+	"codes/addtwo"
 	"codes/balancedbinarytree"
 	"codes/base7"
 	"codes/binarygap"
@@ -59,12 +60,14 @@ import (
 	"codes/transpose"
 	"codes/traversal"
 	"codes/tree"
+	"codes/twopointer"
 	"codes/validation"
 	"codes/validparentheses"
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/twopointer"
+	"codes/validanagram"
+	"codes/isomorphic"
 )
 
 func main() {
@@ -577,6 +580,39 @@ func main() {
 	nums2 = []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
 	k2 := twopointer.RemoveDuplicates(nums2)
 	fmt.Println("k =", k2, "nums =", nums2[:k2])
+
+
+	// Add Two Numbers
+
+	l1 := addtwo.BuildList([]int{2, 4, 3})
+	l2 := addtwo.BuildList([]int{5, 6, 4})
+	result := addtwo.AddTwo(l1, l2)
+	fmt.Print("sum: ")
+	addtwo.PrintList(result)
+
+	l3 := addtwo.BuildList([]int{0})
+	l4 := addtwo.BuildList([]int{0})
+	result2 := addtwo.AddTwo(l3, l4)
+	fmt.Print("sum: ")
+	addtwo.PrintList(result2)
+
+	l5 := addtwo.BuildList([]int{9,9,9,9,9,9,9})
+	l6 := addtwo.BuildList([]int{9,9,9,9})
+	result3 := addtwo.AddTwo(l5, l6)
+	fmt.Print("sum: ")
+	addtwo.PrintList(result3)
+
+
+	// valid anagram
+	fmt.Println(validanagram.Anagram("anagram", "nagaram"))
+	fmt.Println(validanagram.Anagram("rat", "car"))
+
+	//isomorphic strings
+
+	fmt.Println(isomorphic.Isomorphic("egg", "add"))    
+	fmt.Println(isomorphic.Isomorphic("foo", "bar"))   
+	fmt.Println(isomorphic.Isomorphic("paper", "title")) 
+	fmt.Println(isomorphic.Isomorphic("ab", "aa"))   
 
 }
 
