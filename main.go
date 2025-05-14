@@ -18,9 +18,11 @@ import (
 	"codes/foursum"
 	"codes/graph"
 	"codes/integers"
+	"codes/inttoroman"
 	"codes/keyboard"
 	"codes/lastword"
 	"codes/matrix"
+	"codes/matrixzero"
 	"codes/maxgap"
 	"codes/minstack"
 	"codes/mismatch"
@@ -29,20 +31,28 @@ import (
 	"codes/nodevalue"
 	"codes/occurrences"
 	"codes/palindrome"
+	"codes/palindromenumbercheck"
+	"codes/pascaltriangle"
 	"codes/pathsum"
 	"codes/permutations"
 	"codes/phone"
+	"codes/plusone"
 	"codes/powertwo"
 	"codes/prefix"
 	"codes/primenumbers"
 	"codes/rectanglearea"
 	"codes/reversebits"
 	"codes/reversewords"
+	"codes/romantoint"
 	"codes/sametree"
 	"codes/search"
+	"codes/searchinsert"
 	"codes/searchmatrix"
+	"codes/simplify"
+	"codes/singlenumber"
 	"codes/sorting"
 	"codes/spiralorder"
+	"codes/sqrt"
 	"codes/subset"
 	"codes/summaryranges"
 	"codes/symmetric"
@@ -50,20 +60,11 @@ import (
 	"codes/traversal"
 	"codes/tree"
 	"codes/validation"
+	"codes/validparentheses"
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/plusone"
-	"codes/pascaltriangle"
-	"codes/sqrt"
-	"codes/searchinsert"
-	"codes/simplify"
-	"codes/matrixzero"
-	"codes/romantoint"
-	"codes/inttoroman"
-	"codes/validparentheses"
-	"codes/palindromenumbercheck"
-	"codes/singlenumber"
+	"codes/twopointer"
 )
 
 func main() {
@@ -474,7 +475,7 @@ func main() {
 		},
 	}
 
-	// 
+	//
 	fmt.Println("Is tree 1 balanced? Expected: true ->", balancedbinarytree.IsBalanced(root1))
 
 	root2 := &balancedbinarytree.TreeNode{
@@ -496,16 +497,15 @@ func main() {
 
 	//Pascel Triangle
 
-	fmt.Println(pascaltriangle.Generate(5)) 
-	fmt.Println(pascaltriangle.Generate(1)) 
-
+	fmt.Println(pascaltriangle.Generate(5))
+	fmt.Println(pascaltriangle.Generate(1))
 
 	// Sqrt
 
-	fmt.Println(sqrt.MySqrt(4)) 
-	fmt.Println(sqrt.MySqrt(8)) 
-	fmt.Println(sqrt.MySqrt(0)) 
-	fmt.Println(sqrt.MySqrt(1)) 
+	fmt.Println(sqrt.MySqrt(4))
+	fmt.Println(sqrt.MySqrt(8))
+	fmt.Println(sqrt.MySqrt(0))
+	fmt.Println(sqrt.MySqrt(1))
 
 	//search insert
 
@@ -515,63 +515,68 @@ func main() {
 
 	// simplify path
 
-	fmt.Println(simplify.SimplifyPath("/home/"))                       
-	fmt.Println(simplify.SimplifyPath("/home//foo/"))                  
-	fmt.Println(simplify.SimplifyPath("/home/user/Documents/../Pictures")) 
-	fmt.Println(simplify.SimplifyPath("/../"))                         
-	fmt.Println(simplify.SimplifyPath("/.../a/../b/c/../d/./"))  
-	
-	
+	fmt.Println(simplify.SimplifyPath("/home/"))
+	fmt.Println(simplify.SimplifyPath("/home//foo/"))
+	fmt.Println(simplify.SimplifyPath("/home/user/Documents/../Pictures"))
+	fmt.Println(simplify.SimplifyPath("/../"))
+	fmt.Println(simplify.SimplifyPath("/.../a/../b/c/../d/./"))
+
 	// set matrix zero
 
-		matrix = [][]int{
-			{1, 1, 1},
-			{1, 0, 1},
-			{1, 1, 1},
-		}
-	
-		fmt.Println("Before:")
-		matrixzero.PrintMatrix(matrix)
-	
-		matrixzero.SetZeroes(matrix)
-	
-		fmt.Println("After:")
-		matrixzero.PrintMatrix(matrix)
+	matrix = [][]int{
+		{1, 1, 1},
+		{1, 0, 1},
+		{1, 1, 1},
+	}
 
+	fmt.Println("Before:")
+	matrixzero.PrintMatrix(matrix)
+
+	matrixzero.SetZeroes(matrix)
+
+	fmt.Println("After:")
+	matrixzero.PrintMatrix(matrix)
 
 	// Roman to Integer
-	fmt.Println("Roman 'III' =", romantoint.RomanToInt("III"))         
-	fmt.Println("Roman 'LVIII' =", romantoint.RomanToInt("LVIII"))     
-	fmt.Println("Roman 'MCMXCIV' =", romantoint.RomanToInt("MCMXCIV")) 
+	fmt.Println("Roman 'III' =", romantoint.RomanToInt("III"))
+	fmt.Println("Roman 'LVIII' =", romantoint.RomanToInt("LVIII"))
+	fmt.Println("Roman 'MCMXCIV' =", romantoint.RomanToInt("MCMXCIV"))
 
 	// Integer to Roman
 
-	fmt.Println(inttoroman.IntToRoman(3749)) 
-	fmt.Println(inttoroman.IntToRoman(58))   
-	fmt.Println(inttoroman.IntToRoman(1994)) 	
+	fmt.Println(inttoroman.IntToRoman(3749))
+	fmt.Println(inttoroman.IntToRoman(58))
+	fmt.Println(inttoroman.IntToRoman(1994))
 
 	// Valid Parentheses
 
-	fmt.Println(validparentheses.IsValid("()"))     
+	fmt.Println(validparentheses.IsValid("()"))
 	fmt.Println(validparentheses.IsValid("()[]{}"))
-	fmt.Println(validparentheses.IsValid("(]"))    
-	fmt.Println(validparentheses.IsValid("([])"))  
-
+	fmt.Println(validparentheses.IsValid("(]"))
+	fmt.Println(validparentheses.IsValid("([])"))
 
 	//Palindrome Number Check
 
-	fmt.Println(palindromenumbercheck.IsPalindrome(121))   
-	fmt.Println(palindromenumbercheck.IsPalindrome(-121))  
-	fmt.Println(palindromenumbercheck.IsPalindrome(10))    
+	fmt.Println(palindromenumbercheck.IsPalindrome(121))
+	fmt.Println(palindromenumbercheck.IsPalindrome(-121))
+	fmt.Println(palindromenumbercheck.IsPalindrome(10))
 	fmt.Println(palindromenumbercheck.IsPalindrome(12321))
 
 	// Single Number
 
-	fmt.Println(singlenumber.SingleNumber([]int{2, 2, 1}))       
-	fmt.Println(singlenumber.SingleNumber([]int{4, 1, 2, 1, 2})) 
-	fmt.Println(singlenumber.SingleNumber([]int{1}))             
+	fmt.Println(singlenumber.SingleNumber([]int{2, 2, 1}))
+	fmt.Println(singlenumber.SingleNumber([]int{4, 1, 2, 1, 2}))
+	fmt.Println(singlenumber.SingleNumber([]int{1}))
 
+	// Remove Duplicates from Sorted Array
 
-	
+	nums1 = []int{1, 1, 2}
+	k1 := twopointer.RemoveDuplicates(nums1)
+	fmt.Println("k =", k1, "nums =", nums1[:k1])
+
+	nums2 = []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
+	k2 := twopointer.RemoveDuplicates(nums2)
+	fmt.Println("k =", k2, "nums =", nums2[:k2])
+
 }
 
