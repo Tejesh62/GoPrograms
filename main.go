@@ -68,6 +68,8 @@ import (
 	"codes/wordmatch"
 	"codes/validanagram"
 	"codes/isomorphic"
+	"codes/sortedarray"
+	"codes/bits"
 )
 
 func main() {
@@ -613,6 +615,17 @@ func main() {
 	fmt.Println(isomorphic.Isomorphic("foo", "bar"))   
 	fmt.Println(isomorphic.Isomorphic("paper", "title")) 
 	fmt.Println(isomorphic.Isomorphic("ab", "aa"))   
+
+	// Sorted Arrays
+	fmt.Println(sortedarray.SearchRange([]int{5,7,7,8,8,10} ,8))
+	fmt.Println(sortedarray.SearchRange([]int{5,7,7,8,8,10}, 6))
+	fmt.Println(sortedarray.SearchRange([]int{}, 0))
+
+
+	// Number of 1 Bits
+	fmt.Println(bits.HammingWeight(11))
+	fmt.Println(bits.HammingWeight(128))
+	fmt.Println(bits.HammingWeight(2147483645))
 
 }
 

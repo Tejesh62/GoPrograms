@@ -20,11 +20,8 @@ func Combination(candidates []int, target int) [][]int {
 			continue
 		}
 
-		// Choose
 		path = append(path, candidates[i])
-		// Reuse same number (i, not i+1)
 		backtrack(i, target - candidates[i])
-		// Backtrack
 		path = path[:len(path)-1]
 	}
 }
