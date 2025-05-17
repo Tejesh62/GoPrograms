@@ -70,6 +70,9 @@ import (
 	"codes/isomorphic"
 	"codes/sortedarray"
 	"codes/bits"
+	"codes/insertinterval"
+	"codes/reverseint"
+	"codes/substring"
 )
 
 func main() {
@@ -626,6 +629,30 @@ func main() {
 	fmt.Println(bits.HammingWeight(11))
 	fmt.Println(bits.HammingWeight(128))
 	fmt.Println(bits.HammingWeight(2147483645))
+
+	// Insert Interval 
+		intervals1 := [][]int{{1, 3}, {6, 9}}
+		newInterval1 := []int{2, 5}
+		fmt.Println(insertinterval.Insert(intervals1, newInterval1)) 
+	
+		intervals2 := [][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}
+		newInterval2 := []int{4, 8}
+		fmt.Println(insertinterval.Insert(intervals2, newInterval2)) 
+
+	// Reverse Integer
+
+	fmt.Println(reverseint.Reverse(123))   
+	fmt.Println(reverseint.Reverse(-123))   
+	fmt.Println(reverseint.Reverse(120))    
+	fmt.Println(reverseint.Reverse(1534236469))
+
+	// Longest Substring Without Repeating Characters
+
+		fmt.Println(substring.LengthOfLongestSubstring("abcabcbb")) 
+		fmt.Println(substring.LengthOfLongestSubstring("bbbbb"))    
+		fmt.Println(substring.LengthOfLongestSubstring("pwwkew"))   
+		fmt.Println(substring.LengthOfLongestSubstring(""))         
+
 
 }
 
