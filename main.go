@@ -73,6 +73,7 @@ import (
 	"codes/insertinterval"
 	"codes/reverseint"
 	"codes/substring"
+	"codes/maxarea"
 )
 
 func main() {
@@ -651,7 +652,12 @@ func main() {
 		fmt.Println(substring.LengthOfLongestSubstring("abcabcbb")) 
 		fmt.Println(substring.LengthOfLongestSubstring("bbbbb"))    
 		fmt.Println(substring.LengthOfLongestSubstring("pwwkew"))   
-		fmt.Println(substring.LengthOfLongestSubstring(""))         
+		fmt.Println(substring.LengthOfLongestSubstring("")) 
+		
+	//  Container With Most Water
+
+		fmt.Println(maxarea.MaxArea([]int{1,8,6,2,5,4,8,3,7})) 
+		fmt.Println(maxarea.MaxArea([]int{1,1}))              
 
 
 }
