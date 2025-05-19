@@ -74,6 +74,9 @@ import (
 	"codes/reverseint"
 	"codes/substring"
 	"codes/maxarea"
+	"codes/excel"
+	"codes/majority"
+	"codes/happynum"
 )
 
 func main() {
@@ -657,8 +660,22 @@ func main() {
 	//  Container With Most Water
 
 		fmt.Println(maxarea.MaxArea([]int{1,8,6,2,5,4,8,3,7})) 
-		fmt.Println(maxarea.MaxArea([]int{1,1}))              
+		fmt.Println(maxarea.MaxArea([]int{1,1}))     
+		
+	
+	// Excel Sheet Column Title
+			fmt.Println(excel.Convert(1))
+			fmt.Println(excel.Convert(28))
+			fmt.Println(excel.Convert(701))
+	
+	// Majority Element
+		fmt.Println((majority.Majority([]int{3,2,3})))
+		fmt.Println((majority.Majority([]int{2,2,1,1,1,2,2})))
 
+	// Happy Number
+
+		fmt.Println("Is 19 a happy number?", happynum.Happy(19)) 
+		fmt.Println("Is 2 a happy number?", happynum.Happy(2))   
 
 }
 
