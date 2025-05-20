@@ -77,6 +77,7 @@ import (
 	"codes/excel"
 	"codes/majority"
 	"codes/happynum"
+	"codes/formatting"
 )
 
 func main() {
@@ -676,6 +677,11 @@ func main() {
 
 		fmt.Println("Is 19 a happy number?", happynum.Happy(19)) 
 		fmt.Println("Is 2 a happy number?", happynum.Happy(2))   
+
+	// License Key Formatting
+
+		fmt.Println(formatting.Formatting("5F3Z-2e-9-w", 4)) 
+		fmt.Println(formatting.Formatting("2-5g-3-J", 2))    
 
 }
 
