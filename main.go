@@ -9,26 +9,35 @@ import (
 	"codes/base7"
 	"codes/binarygap"
 	"codes/bitmapholes"
+	"codes/bits"
 	"codes/colors"
 	"codes/combination"
 	"codes/count"
 	"codes/counting"
 	"codes/distance"
 	"codes/equalparts"
+	"codes/excel"
 	"codes/excelsheet"
+	"codes/formatting"
 	"codes/foursum"
 	"codes/graph"
+	"codes/happynum"
+	"codes/insertinterval"
 	"codes/integers"
 	"codes/inttoroman"
+	"codes/isomorphic"
 	"codes/keyboard"
 	"codes/lastword"
+	"codes/majority"
 	"codes/matrix"
 	"codes/matrixzero"
+	"codes/maxarea"
 	"codes/maxgap"
 	"codes/minstack"
 	"codes/mismatch"
 	"codes/missingnumber"
 	"codes/multiply"
+	"codes/nextperm"
 	"codes/nodevalue"
 	"codes/occurrences"
 	"codes/palindrome"
@@ -43,6 +52,7 @@ import (
 	"codes/primenumbers"
 	"codes/rectanglearea"
 	"codes/reversebits"
+	"codes/reverseint"
 	"codes/reversewords"
 	"codes/romantoint"
 	"codes/sametree"
@@ -51,33 +61,25 @@ import (
 	"codes/searchmatrix"
 	"codes/simplify"
 	"codes/singlenumber"
+	"codes/sortedarray"
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/sqrt"
 	"codes/subset"
+	"codes/substring"
 	"codes/summaryranges"
 	"codes/symmetric"
 	"codes/transpose"
 	"codes/traversal"
 	"codes/tree"
 	"codes/twopointer"
+	"codes/validanagram"
 	"codes/validation"
 	"codes/validparentheses"
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/validanagram"
-	"codes/isomorphic"
-	"codes/sortedarray"
-	"codes/bits"
-	"codes/insertinterval"
-	"codes/reverseint"
-	"codes/substring"
-	"codes/maxarea"
-	"codes/excel"
-	"codes/majority"
-	"codes/happynum"
-	"codes/formatting"
+	"codes/triangle"
 )
 
 func main() {
@@ -591,7 +593,6 @@ func main() {
 	k2 := twopointer.RemoveDuplicates(nums2)
 	fmt.Println("k =", k2, "nums =", nums2[:k2])
 
-
 	// Add Two Numbers
 
 	l1 := addtwo.BuildList([]int{2, 4, 3})
@@ -606,12 +607,11 @@ func main() {
 	fmt.Print("sum: ")
 	addtwo.PrintList(result2)
 
-	l5 := addtwo.BuildList([]int{9,9,9,9,9,9,9})
-	l6 := addtwo.BuildList([]int{9,9,9,9})
+	l5 := addtwo.BuildList([]int{9, 9, 9, 9, 9, 9, 9})
+	l6 := addtwo.BuildList([]int{9, 9, 9, 9})
 	result3 := addtwo.AddTwo(l5, l6)
 	fmt.Print("sum: ")
 	addtwo.PrintList(result3)
-
 
 	// valid anagram
 	fmt.Println(validanagram.Anagram("anagram", "nagaram"))
@@ -619,69 +619,84 @@ func main() {
 
 	//isomorphic strings
 
-	fmt.Println(isomorphic.Isomorphic("egg", "add"))    
-	fmt.Println(isomorphic.Isomorphic("foo", "bar"))   
-	fmt.Println(isomorphic.Isomorphic("paper", "title")) 
-	fmt.Println(isomorphic.Isomorphic("ab", "aa"))   
+	fmt.Println(isomorphic.Isomorphic("egg", "add"))
+	fmt.Println(isomorphic.Isomorphic("foo", "bar"))
+	fmt.Println(isomorphic.Isomorphic("paper", "title"))
+	fmt.Println(isomorphic.Isomorphic("ab", "aa"))
 
 	// Sorted Arrays
-	fmt.Println(sortedarray.SearchRange([]int{5,7,7,8,8,10} ,8))
-	fmt.Println(sortedarray.SearchRange([]int{5,7,7,8,8,10}, 6))
+	fmt.Println(sortedarray.SearchRange([]int{5, 7, 7, 8, 8, 10}, 8))
+	fmt.Println(sortedarray.SearchRange([]int{5, 7, 7, 8, 8, 10}, 6))
 	fmt.Println(sortedarray.SearchRange([]int{}, 0))
-
 
 	// Number of 1 Bits
 	fmt.Println(bits.HammingWeight(11))
 	fmt.Println(bits.HammingWeight(128))
 	fmt.Println(bits.HammingWeight(2147483645))
 
-	// Insert Interval 
-		intervals1 := [][]int{{1, 3}, {6, 9}}
-		newInterval1 := []int{2, 5}
-		fmt.Println(insertinterval.Insert(intervals1, newInterval1)) 
-	
-		intervals2 := [][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}
-		newInterval2 := []int{4, 8}
-		fmt.Println(insertinterval.Insert(intervals2, newInterval2)) 
+	// Insert Interval
+	intervals1 := [][]int{{1, 3}, {6, 9}}
+	newInterval1 := []int{2, 5}
+	fmt.Println(insertinterval.Insert(intervals1, newInterval1))
+
+	intervals2 := [][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}
+	newInterval2 := []int{4, 8}
+	fmt.Println(insertinterval.Insert(intervals2, newInterval2))
 
 	// Reverse Integer
 
-	fmt.Println(reverseint.Reverse(123))   
-	fmt.Println(reverseint.Reverse(-123))   
-	fmt.Println(reverseint.Reverse(120))    
+	fmt.Println(reverseint.Reverse(123))
+	fmt.Println(reverseint.Reverse(-123))
+	fmt.Println(reverseint.Reverse(120))
 	fmt.Println(reverseint.Reverse(1534236469))
 
 	// Longest Substring Without Repeating Characters
 
-		fmt.Println(substring.LengthOfLongestSubstring("abcabcbb")) 
-		fmt.Println(substring.LengthOfLongestSubstring("bbbbb"))    
-		fmt.Println(substring.LengthOfLongestSubstring("pwwkew"))   
-		fmt.Println(substring.LengthOfLongestSubstring("")) 
-		
+	fmt.Println(substring.LengthOfLongestSubstring("abcabcbb"))
+	fmt.Println(substring.LengthOfLongestSubstring("bbbbb"))
+	fmt.Println(substring.LengthOfLongestSubstring("pwwkew"))
+	fmt.Println(substring.LengthOfLongestSubstring(""))
+
 	//  Container With Most Water
 
-		fmt.Println(maxarea.MaxArea([]int{1,8,6,2,5,4,8,3,7})) 
-		fmt.Println(maxarea.MaxArea([]int{1,1}))     
-		
-	
+	fmt.Println(maxarea.MaxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
+	fmt.Println(maxarea.MaxArea([]int{1, 1}))
+
 	// Excel Sheet Column Title
-			fmt.Println(excel.Convert(1))
-			fmt.Println(excel.Convert(28))
-			fmt.Println(excel.Convert(701))
-	
+	fmt.Println(excel.Convert(1))
+	fmt.Println(excel.Convert(28))
+	fmt.Println(excel.Convert(701))
+
 	// Majority Element
-		fmt.Println((majority.Majority([]int{3,2,3})))
-		fmt.Println((majority.Majority([]int{2,2,1,1,1,2,2})))
+	fmt.Println((majority.Majority([]int{3, 2, 3})))
+	fmt.Println((majority.Majority([]int{2, 2, 1, 1, 1, 2, 2})))
 
 	// Happy Number
 
-		fmt.Println("Is 19 a happy number?", happynum.Happy(19)) 
-		fmt.Println("Is 2 a happy number?", happynum.Happy(2))   
+	fmt.Println("Is 19 a happy number?", happynum.Happy(19))
+	fmt.Println("Is 2 a happy number?", happynum.Happy(2))
 
 	// License Key Formatting
 
-		fmt.Println(formatting.Formatting("5F3Z-2e-9-w", 4)) 
-		fmt.Println(formatting.Formatting("2-5g-3-J", 2))    
+	fmt.Println(formatting.Formatting("5F3Z-2e-9-w", 4))
+	fmt.Println(formatting.Formatting("2-5g-3-J", 2))
+
+	// Next Permutation
+
+	nums = []int{1, 2, 3}
+	nextperm.Permutation(nums)
+	fmt.Println(nums)
+
+	// Triangle
+	fmt.Println(triangle.Total([][]int{
+		{2},
+		{3, 4},
+		{6, 5, 7},
+		{4, 1, 8, 3},
+	})) 
+
+	fmt.Println(triangle.Total([][]int{
+		{-10},
+	})) 
 
 }
-
