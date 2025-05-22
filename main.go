@@ -65,6 +65,7 @@ import (
 	"codes/sorting"
 	"codes/spiralorder"
 	"codes/sqrt"
+	"codes/subseq"
 	"codes/subset"
 	"codes/substring"
 	"codes/summaryranges"
@@ -72,6 +73,7 @@ import (
 	"codes/transpose"
 	"codes/traversal"
 	"codes/tree"
+	"codes/triangle"
 	"codes/twopointer"
 	"codes/validanagram"
 	"codes/validation"
@@ -79,7 +81,8 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/triangle"
+	"codes/difference"
+	"codes/uglynum"
 )
 
 func main() {
@@ -698,5 +701,27 @@ func main() {
 	fmt.Println(triangle.Total([][]int{
 		{-10},
 	})) 
+
+	//
+
+	fmt.Println(subseq.Sequence("abc", "ahbgdc")) 
+	fmt.Println(subseq.Sequence("axc", "ahbgdc")) 
+	fmt.Println(subseq.Sequence("", "ahbgdc"))    
+	fmt.Println(subseq.Sequence("abc", ""))      
+
+
+	//Find the Difference
+
+	fmt.Println(string(difference.Dif("abcd", "abcde"))) 
+	fmt.Println(string(difference.Dif("", "y")))
+
+	// Ugly Number
+
+	fmt.Println(isUgly(6))   
+	fmt.Println(isUgly(1))   
+	fmt.Println(isUgly(14))  
+	fmt.Println(isUgly(30))  
+	fmt.Println(uglynum.Ugly(0))   
+
 
 }
