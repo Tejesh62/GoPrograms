@@ -14,10 +14,12 @@ import (
 	"codes/combination"
 	"codes/count"
 	"codes/counting"
+	"codes/difference"
 	"codes/distance"
 	"codes/equalparts"
 	"codes/excel"
 	"codes/excelsheet"
+	"codes/fizzbuzz"
 	"codes/formatting"
 	"codes/foursum"
 	"codes/graph"
@@ -75,14 +77,13 @@ import (
 	"codes/tree"
 	"codes/triangle"
 	"codes/twopointer"
+	"codes/uglynum"
 	"codes/validanagram"
 	"codes/validation"
 	"codes/validparentheses"
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
-	"codes/difference"
-	"codes/uglynum"
 )
 
 func main() {
@@ -717,11 +718,17 @@ func main() {
 
 	// Ugly Number
 
-	fmt.Println(isUgly(6))   
-	fmt.Println(isUgly(1))   
-	fmt.Println(isUgly(14))  
-	fmt.Println(isUgly(30))  
+	fmt.Println(uglynum.Ugly(6))   
+	fmt.Println(uglynum.Ugly(1))   
+	fmt.Println(uglynum.Ugly(14))  
+	fmt.Println(uglynum.Ugly(30))  
 	fmt.Println(uglynum.Ugly(0))   
+
+	// FizzBuzz
+
+	fmt.Println(fizzbuzz.FizzBuzz(3))  
+	fmt.Println(fizzbuzz.FizzBuzz(5))  
+	fmt.Println(fizzbuzz.FizzBuzz(15)) 
 
 
 }
