@@ -34,8 +34,7 @@ func Multiply(num1 string, num2 string) string {
 }
 
 // func main() {
-// 	fmt.Println(multiply("2", "3"))       
-// 	fmt.Println(multiply("123", "456"))   
-// 	fmt.Println(multiply("0", "123456"))  
+// 	fmt.Println(multiply("2", "3"))
+// 	fmt.Println(multiply("123", "456"))
+// 	fmt.Println(multiply("0", "123456"))
 // }
-

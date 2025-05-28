@@ -84,6 +84,7 @@ import (
 	"codes/version"
 	"codes/wordbreak"
 	"codes/wordmatch"
+	"codes/zero"
 )
 
 func main() {
@@ -730,5 +731,14 @@ func main() {
 	fmt.Println(fizzbuzz.FizzBuzz(5))  
 	fmt.Println(fizzbuzz.FizzBuzz(15)) 
 
+	// Move Zero
+
+	nums1 = []int{0, 1, 0, 3, 12}
+	zero.MoveZeroes(nums1)
+	fmt.Println(nums1) 
+
+	nums2 = []int{0}
+	zero.MoveZeroes(nums2)
+	fmt.Println(nums2) 
 
 }
