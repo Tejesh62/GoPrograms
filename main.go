@@ -85,6 +85,9 @@ import (
 	"codes/wordbreak"
 	"codes/wordmatch"
 	"codes/zero"
+	"codes/complement"
+	"codes/rowkeyboard"
+	"codes/duplicate"
 )
 
 func main() {
@@ -740,5 +743,34 @@ func main() {
 	nums2 = []int{0}
 	zero.MoveZeroes(nums2)
 	fmt.Println(nums2) 
+
+	// Number Complement
+
+	fmt.Print(complement.Complement(5))
+	fmt.Print(complement.Complement(1))
+	fmt.Print(complement.Complement(0))
+
+	// Keyboard Row
+
+	words := []string{"Hello", "Alaska", "Dad", "Peace", "adsdf", "sfd"}
+	validWords := rowkeyboard.Words(words)
+	fmt.Println("Words typed using only one row of the keyboard:")
+	for _, word := range validWords {
+	fmt.Println(word)
+
+   }
+
+   // Contains Duplicate
+
+   testCases := [][]int{
+		{1, 2, 3, 1},
+		{1, 2, 3, 4},
+		{1, 1, 1, 3, 3, 4, 3, 2, 4, 2},
+	}
+
+	for _, tc := range testCases {
+		fmt.Println("Input:", tc)
+		fmt.Println("Contains duplicate:", duplicate.Contains(tc))
+	}
 
 }
