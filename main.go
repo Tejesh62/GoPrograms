@@ -12,10 +12,12 @@ import (
 	"codes/bits"
 	"codes/colors"
 	"codes/combination"
+	"codes/complement"
 	"codes/count"
 	"codes/counting"
 	"codes/difference"
 	"codes/distance"
+	"codes/duplicate"
 	"codes/equalparts"
 	"codes/excel"
 	"codes/excelsheet"
@@ -57,6 +59,7 @@ import (
 	"codes/reverseint"
 	"codes/reversewords"
 	"codes/romantoint"
+	"codes/rowkeyboard"
 	"codes/sametree"
 	"codes/search"
 	"codes/searchinsert"
@@ -72,6 +75,7 @@ import (
 	"codes/substring"
 	"codes/summaryranges"
 	"codes/symmetric"
+	"codes/three"
 	"codes/transpose"
 	"codes/traversal"
 	"codes/tree"
@@ -85,9 +89,7 @@ import (
 	"codes/wordbreak"
 	"codes/wordmatch"
 	"codes/zero"
-	"codes/complement"
-	"codes/rowkeyboard"
-	"codes/duplicate"
+	"codes/buddy"
 )
 
 func main() {
@@ -701,48 +703,47 @@ func main() {
 		{3, 4},
 		{6, 5, 7},
 		{4, 1, 8, 3},
-	})) 
+	}))
 
 	fmt.Println(triangle.Total([][]int{
 		{-10},
-	})) 
+	}))
 
 	//
 
-	fmt.Println(subseq.Sequence("abc", "ahbgdc")) 
-	fmt.Println(subseq.Sequence("axc", "ahbgdc")) 
-	fmt.Println(subseq.Sequence("", "ahbgdc"))    
-	fmt.Println(subseq.Sequence("abc", ""))      
-
+	fmt.Println(subseq.Sequence("abc", "ahbgdc"))
+	fmt.Println(subseq.Sequence("axc", "ahbgdc"))
+	fmt.Println(subseq.Sequence("", "ahbgdc"))
+	fmt.Println(subseq.Sequence("abc", ""))
 
 	//Find the Difference
 
-	fmt.Println(string(difference.Dif("abcd", "abcde"))) 
+	fmt.Println(string(difference.Dif("abcd", "abcde")))
 	fmt.Println(string(difference.Dif("", "y")))
 
 	// Ugly Number
 
-	fmt.Println(uglynum.Ugly(6))   
-	fmt.Println(uglynum.Ugly(1))   
-	fmt.Println(uglynum.Ugly(14))  
-	fmt.Println(uglynum.Ugly(30))  
-	fmt.Println(uglynum.Ugly(0))   
+	fmt.Println(uglynum.Ugly(6))
+	fmt.Println(uglynum.Ugly(1))
+	fmt.Println(uglynum.Ugly(14))
+	fmt.Println(uglynum.Ugly(30))
+	fmt.Println(uglynum.Ugly(0))
 
 	// FizzBuzz
 
-	fmt.Println(fizzbuzz.FizzBuzz(3))  
-	fmt.Println(fizzbuzz.FizzBuzz(5))  
-	fmt.Println(fizzbuzz.FizzBuzz(15)) 
+	fmt.Println(fizzbuzz.FizzBuzz(3))
+	fmt.Println(fizzbuzz.FizzBuzz(5))
+	fmt.Println(fizzbuzz.FizzBuzz(15))
 
 	// Move Zero
 
 	nums1 = []int{0, 1, 0, 3, 12}
 	zero.MoveZeroes(nums1)
-	fmt.Println(nums1) 
+	fmt.Println(nums1)
 
 	nums2 = []int{0}
 	zero.MoveZeroes(nums2)
-	fmt.Println(nums2) 
+	fmt.Println(nums2)
 
 	// Number Complement
 
@@ -756,13 +757,13 @@ func main() {
 	validWords := rowkeyboard.Words(words)
 	fmt.Println("Words typed using only one row of the keyboard:")
 	for _, word := range validWords {
-	fmt.Println(word)
+		fmt.Println(word)
 
-   }
+	}
 
-   // Contains Duplicate
+	// Contains Duplicate
 
-   testCases := [][]int{
+	testCases := [][]int{
 		{1, 2, 3, 1},
 		{1, 2, 3, 4},
 		{1, 1, 1, 3, 3, 4, 3, 2, 4, 2},
@@ -772,5 +773,22 @@ func main() {
 		fmt.Println("Input:", tc)
 		fmt.Println("Contains duplicate:", duplicate.Contains(tc))
 	}
+
+	// Power of 3
+
+	fmt.Println(three.Power(27))
+	fmt.Println(three.Power(0))
+	fmt.Println(three.Power(-1))
+	fmt.Println(three.Power(1))
+	fmt.Println(three.Power(9))
+	fmt.Println(three.Power(45))
+
+	// Buddy Strings
+
+	fmt.Println(buddy.Buddy("ab", "ba"))
+	fmt.Println(buddy.Buddy("ab", "ab"))
+	fmt.Println(buddy.Buddy("aa", "aa"))
+	fmt.Println(buddy.Buddy("aaaaaaabc", "aaaaaaacb"))
+	fmt.Println(buddy.Buddy("abcd", "badc"))
 
 }
