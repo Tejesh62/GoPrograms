@@ -10,6 +10,7 @@ import (
 	"codes/binarygap"
 	"codes/bitmapholes"
 	"codes/bits"
+	"codes/buddy"
 	"codes/colors"
 	"codes/combination"
 	"codes/complement"
@@ -54,6 +55,7 @@ import (
 	"codes/powertwo"
 	"codes/prefix"
 	"codes/primenumbers"
+	"codes/rectangle"
 	"codes/rectanglearea"
 	"codes/reversebits"
 	"codes/reverseint"
@@ -75,6 +77,7 @@ import (
 	"codes/substring"
 	"codes/summaryranges"
 	"codes/symmetric"
+	"codes/targetsum"
 	"codes/three"
 	"codes/transpose"
 	"codes/traversal"
@@ -89,7 +92,6 @@ import (
 	"codes/wordbreak"
 	"codes/wordmatch"
 	"codes/zero"
-	"codes/buddy"
 )
 
 func main() {
@@ -790,5 +792,15 @@ func main() {
 	fmt.Println(buddy.Buddy("aa", "aa"))
 	fmt.Println(buddy.Buddy("aaaaaaabc", "aaaaaaacb"))
 	fmt.Println(buddy.Buddy("abcd", "badc"))
+
+	// Target Sum
+
+	fmt.Println(targetsum.Target([]int{1, 1, 1, 1, 1}, 3))
+	fmt.Println(targetsum.Target([]int{1}, 1))
+
+	// construct rectangle
+	fmt.Println(rectangle.ConstructRectangle(4))      
+	fmt.Println(rectangle.ConstructRectangle(37))     
+	fmt.Println(rectangle.ConstructRectangle(122122)) 
 
 }
