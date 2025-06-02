@@ -4,10 +4,12 @@ import (
 	"fmt"
 
 	"codes/addbinary"
+	"codes/addstrings"
 	"codes/addtwo"
 	"codes/balancedbinarytree"
 	"codes/base7"
 	"codes/binarygap"
+	"codes/binarywatch"
 	"codes/bitmapholes"
 	"codes/bits"
 	"codes/buddy"
@@ -799,8 +801,19 @@ func main() {
 	fmt.Println(targetsum.Target([]int{1}, 1))
 
 	// construct rectangle
-	fmt.Println(rectangle.ConstructRectangle(4))      
-	fmt.Println(rectangle.ConstructRectangle(37))     
-	fmt.Println(rectangle.ConstructRectangle(122122)) 
+	fmt.Println(rectangle.ConstructRectangle(4))
+	fmt.Println(rectangle.ConstructRectangle(37))
+	fmt.Println(rectangle.ConstructRectangle(122122))
+
+	// Binary Watch
+
+	fmt.Println(binarywatch.BinaryWatch(1))
+	fmt.Println(binarywatch.BinaryWatch(9))
+
+	// Add Strings
+
+	fmt.Println(addstrings.AddStrings("11", "123"))
+	fmt.Println(addstrings.AddStrings("456", "77"))
+	fmt.Println(addstrings.AddStrings("0", "0"))
 
 }
