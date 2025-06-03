@@ -51,6 +51,7 @@ import (
 	"codes/palindromenumbercheck"
 	"codes/pascaltriangle"
 	"codes/pathsum"
+	"codes/perfectnumber"
 	"codes/permutations"
 	"codes/phone"
 	"codes/plusone"
@@ -61,6 +62,7 @@ import (
 	"codes/rectanglearea"
 	"codes/reversebits"
 	"codes/reverseint"
+	"codes/reversestring"
 	"codes/reversewords"
 	"codes/romantoint"
 	"codes/rowkeyboard"
@@ -815,5 +817,20 @@ func main() {
 	fmt.Println(addstrings.AddStrings("11", "123"))
 	fmt.Println(addstrings.AddStrings("456", "77"))
 	fmt.Println(addstrings.AddStrings("0", "0"))
+
+	// Reverse String
+
+	s1 := []byte{'h', 'e', 'l', 'l', 'o'}
+	reversestring.ReverseString(s1)
+	fmt.Println(string(s1))
+
+	s2 := []byte{'H', 'a', 'n', 'n', 'a', 'h'}
+	reversestring.ReverseString(s2)
+	fmt.Println(string(s2))
+
+	// Perfect Number
+
+	fmt.Println(perfectnumber.PerfectNumber(28))
+	fmt.Println(perfectnumber.PerfectNumber(7))
 
 }
