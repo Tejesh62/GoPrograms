@@ -96,10 +96,10 @@ import (
 	"codes/wordbreak"
 	"codes/wordmatch"
 	"codes/zero"
+	"codes/city"
 )
 
 func main() {
-	// BitmapHoles test
 	bitmapInput := []string{
 		"01111",
 		"01001",
@@ -832,5 +832,16 @@ func main() {
 
 	fmt.Println(perfectnumber.PerfectNumber(28))
 	fmt.Println(perfectnumber.PerfectNumber(7))
+
+	// Destination City
+
+	paths1 := [][]string{{"London", "New York"}, {"New York", "Lima"}, {"Lima", "Sao Paulo"}}
+	fmt.Println(city.DesCity(paths1))
+
+	paths2 := [][]string{{"B", "C"}, {"D", "B"}, {"C", "A"}}
+	fmt.Println(city.DesCity(paths2))
+
+	paths3 := [][]string{{"A", "Z"}}
+	fmt.Println(city.DesCity(paths3))
 
 }
